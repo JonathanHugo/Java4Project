@@ -21,7 +21,7 @@ public class User {
 	private String location;
 	@NonNull
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-	private LocalDate appointmentDate;
+	private LocalDate bday;
 
 	
 }
