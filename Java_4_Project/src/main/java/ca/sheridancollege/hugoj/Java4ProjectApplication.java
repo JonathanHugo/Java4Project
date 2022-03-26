@@ -10,6 +10,5 @@ public class Java4ProjectApplication {
 		SpringApplication.run(Java4ProjectApplication.class, args);
 	}
 
-	//krista
 	
 }
