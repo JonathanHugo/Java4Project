@@ -1,5 +1,3 @@
-package ca.sheridancollege.hugoj;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,5 +8,5 @@ public class Java4ProjectApplication {
 		SpringApplication.run(Java4ProjectApplication.class, args);
 	}
 
-	
+	//test
 }
