@@ -1,6 +1,9 @@
 package ca.sheridancollege.hugoj.bootstrap;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -30,18 +33,40 @@ public class bootstrapData implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
 		
+		//List<GamePlay> gplist = new ArrayList<GamePlay>();
+		List<User> ulist = new ArrayList<User>();
 		
-		//GamePlay gp1 = new GamePlay (u1, g1, LocalDate.of(2022, 2, 5), 5);
+		User u1 = User.builder()
+				.username("tim")
+				.location("Canada")
+				.bday(LocalDate.of(2001, 2, 5))
+				.build();
+		ulist.add(u1);
 		
-		User u1 = new User ("Tom221", "Canada", LocalDate.of(2002, 5, 5), gp1);
+		Game g1 = Game.builder()
+				.name("Quick Draw")
+				.build();
 		
-		Game g1 = new Game ("QuickDraw", gp1, u1);
+		GamePlay gp1 = GamePlay.builder()
+				.score(4)
+				.scoreDate(LocalDateTime.of(2022, 2, 5,12,13))
+				.build();
+		//gplist.add(gp1);
 		
-		GamePlay gp1 = new GamePlay (u1, g1, LocalDate.of(2022, 2, 5), 5);
+		Account a1  = Account.builder()
+				.username("Tom")
+				.email("Tom@Gmail.com")
+				.encryptedPassword("secret")
+				.build();
 		
-		Account a1 = new Account ("Tom221","tomgulligan@gmail.com", "secret", u1 )
+		a1.setUser(u1);
+		u1.setGamePlays();
+		//g1.setGamePlays(null);
+		g1.setUserList(ulist);
+		
+		gp1.setUser(u1);
+		gp1.setGame(g1);
 
 	}
 	
