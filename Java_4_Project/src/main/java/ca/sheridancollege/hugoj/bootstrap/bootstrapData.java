@@ -40,7 +40,7 @@ public class bootstrapData implements CommandLineRunner {
 		
 		/* all Games */
 		Game g1 = Game.builder()
-				.name("Quick Draw")
+				.name("Ping Pong")
 				.gamePlays(new ArrayList<GamePlay>())
 				.userList(new ArrayList<User>())
 				.build();
@@ -51,11 +51,13 @@ public class bootstrapData implements CommandLineRunner {
 				.userList(new ArrayList<User>())
 				.build();
 		
+		
 		Game g3 = Game.builder()
-				.name("Ping Pong")
+				.name("Quick Draw")
 				.gamePlays(new ArrayList<GamePlay>())
 				.userList(new ArrayList<User>())
 				.build();
+		
 		
 		Game g4 = Game.builder()
 				.name("Lightsaber Duel")
@@ -78,18 +80,96 @@ public class bootstrapData implements CommandLineRunner {
 				.build();
 
 		u1.getGamePlays().add(gp1);
-///////////////////////////////		
 
-		/////////////////////
+		
 		Account a1  = Account.builder()
 				.username("Tim221")
 				.email("Tim@Gmail.com")
 				.encryptedPassword("secret")
 				.build();
-		
+
 		a1.setUser(u1);
 		gp1.setUser(u1);
-		gp1.setGame(g3);
+		gp1.setGame(g1);
+		
+		
+		/* user who played Baseball */
+		User u2 = User.builder()
+				.username("Will1999")
+				.location("America")
+				.bday(LocalDate.of(1999, 6, 12))
+				.gamePlays(new ArrayList<GamePlay>())
+				.build();
+		
+		GamePlay gp2 = GamePlay.builder()
+				.score(10) //assuming player played pong
+				.scoreDate(LocalDateTime.of(2022, 3, 31,15,10))
+				.build();
+
+		u2.getGamePlays().add(gp2);
+
+		Account a2  = Account.builder()
+				.username("Will1999")
+				.email("Will@Gmail.com")
+				.encryptedPassword("shush221")
+				.build();
+
+		a2.setUser(u2);
+		gp2.setUser(u2);
+		gp2.setGame(g2);
+		
+		
+		/* user who played Quick Draw */
+		User u3 = User.builder()
+				.username("cowboyfan22")
+				.location("Ireland")
+				.bday(LocalDate.of(2002, 7, 20))
+				.gamePlays(new ArrayList<GamePlay>())
+				.build();
+		
+		GamePlay gp3 = GamePlay.builder()
+				.score(5) //assuming player played pong
+				.scoreDate(LocalDateTime.of(2022, 4, 1, 13, 30))
+				.build();
+
+		u3.getGamePlays().add(gp3);
+
+		Account a3  = Account.builder()
+				.username("cowboyfan22")
+				.email("Chrisorvil@Gmail.com")
+				.encryptedPassword("undisclosed")
+				.build();
+
+		a3.setUser(u3);
+		gp3.setUser(u3);
+		gp3.setGame(g3);
+		
+		
+		/* user who played Lightsaber Duel */
+		User u4 = User.builder()
+				.username("lukewalker09")
+				.location("Chile")
+				.bday(LocalDate.of(2002, 7, 20))
+				.gamePlays(new ArrayList<GamePlay>())
+				.build();
+		
+		GamePlay gp4 = GamePlay.builder()
+				.score(5) //assuming player played pong
+				.scoreDate(LocalDateTime.of(2022, 4, 1, 13, 30))
+				.build();
+
+		u4.getGamePlays().add(gp4);
+
+		Account a4  = Account.builder()
+				.username("lukewalker09")
+				.email("LucasRodri@Gmail.com")
+				.encryptedPassword("confidential31")
+				.build();
+
+		a4.setUser(u4);
+		gp4.setUser(u4);
+		gp4.setGame(g4);
+
 
 	}
 	
