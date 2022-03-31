@@ -34,7 +34,7 @@ public class Game {
 	private String name;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "games")
-	Set<GamePlay> gamePlays;
+	List<GamePlay> gamePlays;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<User> userList;

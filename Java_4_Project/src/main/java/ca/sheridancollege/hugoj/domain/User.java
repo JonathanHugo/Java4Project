@@ -2,6 +2,7 @@ package ca.sheridancollege.hugoj.domain;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -40,7 +41,7 @@ public class User {
 	private LocalDate bday;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "users")
-	Set<GamePlay> gamePlays;
+	List<GamePlay> gamePlays;
 
 	
 }

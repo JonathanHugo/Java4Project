@@ -35,38 +35,61 @@ public class bootstrapData implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		//List<GamePlay> gplist = new ArrayList<GamePlay>();
-		List<User> ulist = new ArrayList<User>();
+		//List<User> ulist = new ArrayList<User>();
 		
-		User u1 = User.builder()
-				.username("tim")
-				.location("Canada")
-				.bday(LocalDate.of(2001, 2, 5))
-				.build();
-		ulist.add(u1);
 		
+		/* all Games */
 		Game g1 = Game.builder()
 				.name("Quick Draw")
+				.gamePlays(new ArrayList<GamePlay>())
+				.userList(new ArrayList<User>())
+				.build();
+		
+		Game g2 = Game.builder()
+				.name("Baseball")
+				.gamePlays(new ArrayList<GamePlay>())
+				.userList(new ArrayList<User>())
+				.build();
+		
+		Game g3 = Game.builder()
+				.name("Ping Pong")
+				.gamePlays(new ArrayList<GamePlay>())
+				.userList(new ArrayList<User>())
+				.build();
+		
+		Game g4 = Game.builder()
+				.name("Lightsaber Duel")
+				.gamePlays(new ArrayList<GamePlay>())
+				.userList(new ArrayList<User>())
+				.build();
+		
+		
+		/* user who played Ping pong */
+		User u1 = User.builder()
+				.username("Tim221")
+				.location("Canada")
+				.bday(LocalDate.of(2001, 2, 5))
+				.gamePlays(new ArrayList<GamePlay>())
 				.build();
 		
 		GamePlay gp1 = GamePlay.builder()
-				.score(4)
+				.score(12) //assuming player played pong
 				.scoreDate(LocalDateTime.of(2022, 2, 5,12,13))
 				.build();
-		//gplist.add(gp1);
-		
+
+		u1.getGamePlays().add(gp1);
+///////////////////////////////		
+
+		/////////////////////
 		Account a1  = Account.builder()
-				.username("Tom")
-				.email("Tom@Gmail.com")
+				.username("Tim221")
+				.email("Tim@Gmail.com")
 				.encryptedPassword("secret")
 				.build();
 		
 		a1.setUser(u1);
-		u1.setGamePlays();
-		//g1.setGamePlays(null);
-		g1.setUserList(ulist);
-		
 		gp1.setUser(u1);
-		gp1.setGame(g1);
+		gp1.setGame(g3);
 
 	}
 	
