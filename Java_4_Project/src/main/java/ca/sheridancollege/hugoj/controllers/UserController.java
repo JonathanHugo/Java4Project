@@ -16,14 +16,16 @@ import ca.sheridancollege.hugoj.domain.User;
 import ca.sheridancollege.hugoj.repositories.AccountRepository;
 import ca.sheridancollege.hugoj.repositories.GamePlayRepository;
 import ca.sheridancollege.hugoj.repositories.UserRepository;
+import lombok.AllArgsConstructor;
 
 
 @Controller
+@AllArgsConstructor
 public class UserController {
 	
-	UserRepository userRepository;
-	AccountRepository accountRepository;
-	GamePlayRepository gamePlayRepository;
+	private UserRepository userRepository;
+	private AccountRepository accountRepository;
+	private GamePlayRepository gamePlayRepository;
 	
 	@PostMapping("/addUser")
 	public String addUser(Model model,@ModelAttribute User user) {

@@ -11,13 +11,15 @@ import ca.sheridancollege.hugoj.domain.User;
 import ca.sheridancollege.hugoj.repositories.AccountRepository;
 import ca.sheridancollege.hugoj.repositories.GamePlayRepository;
 import ca.sheridancollege.hugoj.repositories.UserRepository;
+import lombok.AllArgsConstructor;
 
 @Controller
+@AllArgsConstructor
 public class GameController {
 
-	UserRepository userRepository;
-	AccountRepository accountRepository;
-	GamePlayRepository gamePlayRepository;
+	private UserRepository userRepository;
+	private AccountRepository accountRepository;
+	private GamePlayRepository gamePlayRepository;
 	
 	@GetMapping("/displayUsers")
 	public String displayUsers(Model model) {
