@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Game Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+	
+	.content {
+		background-color: gray;
+		margin: 100px;
+		align-items: center;
+	}
+	
+	button {
+	  	background-color: #313639;
+	  	border: none;
+	  	color: white;
+	  	padding: 20px;
+	  	text-align: center;
+	  	text-decoration: none;
+	  	font-size: 16px;
+	  	cursor: pointer;
+	  	border-radius: 12px;
+	}
+
+</style>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-static-top"
+		style="font-size: 34px; height: 100px; padding: 20px 50px;">
+		<div class="container">
+			<div class="navbar-header">
+				<h1 class="navbar-brand"
+					style="font-size: 40px; position: absolute; bottom: 0; left: 0;">Game Page</h1>
+			</div>
+			<button class="navbar-toggle" data-toggle="collapse"
+				data-target=".navHeaderCollapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="collapse navbar-collapse navHeaderCollapse">
+				<ul style="position: absolute; bottom: 1; right: 0;"
+					class="nav navbar-nav">
+					<li class="active"><a href="addUser">Settings</a></li>
+					<!-- NEEDS TO BE CHANGED -->
+					<li><a th:href="@{/displayUsers}">Leaderboard</a></li>
+					<!-- NEEDS TO BE CHANGED -->
+					<li><a href="/index" th:href="@{/}">Account Settings</a></li>
+					<!-- NEEDS TO BE CHANGED -->
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="content">
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><button type="button">Add Score</button><br>
+		<!-- <a th:href="@{/addUserToGame}">End Game</a> -->
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><button type="button">End Game</button><br>
+		<!-- <a th:href="@{/uploadUserScore}">End Game</a> -->
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>
+	</div>
+	
+	<cite style="font-size: 20px;">
+		Krista Tanciongco, 991576824 <br>
+		Jonathan Hugo, 991564731 <br> 
+		Gabriel Espinoza, 991564810 <br> 
+		Ranvir Singh, 991575494
+	</cite>
+	
+</body>
+</html>
