@@ -27,7 +27,7 @@ public class UserController {
 	private AccountRepository accountRepository;
 	private GamePlayRepository gamePlayRepository;
 	
-	@PostMapping("/addUser")
+	@PostMapping("/addUserToAccount")
 	public String addUser(Model model,@ModelAttribute User user) {
 		
 		User u = userRepository.save(user);
