@@ -49,7 +49,7 @@ public class GameController {
 		user.getGamePlays().add(gamePlay);
 		gamePlay.setUser(user);
 		gamePlayRepository.save(gamePlay);
-		return "index";
+		return "Gamepage.html";
 	}
 	
 	
