@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>LeaderBoard</title>
+<link rel="stylesheet" type="text/css" href="../static/css/mycss.css"
+	th:href="@{/css/mycss.css}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top"
+		style="font-size: 34px; height: 100px; padding: 20px 50px;">
+		<div class="container">
+			<div class="navbar-header">
+				<h1 class="navbar-brand"
+					style="font-size: 40px; position: absolute; bottom: 0; left: 0;">Homepage</h1>
+			</div>
+			<button class="navbar-toggle" data-toggle="collapse"
+				data-target=".navHeaderCollapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<div class="collapse navbar-collapse navHeaderCollapse">
+				<ul style="position: absolute; bottom: 1; right: 0;"
+					class="nav navbar-nav">
+					<li class="active"><a href="addUser">Settings</a></li>
+					<!-- NEEDS TO BE CHANGED -->
+					<li><a href="/leaderboard" th:href="@{/}">Leaderboard</a></li>
+					<!-- NEEDS TO BE CHANGED -->
+					<li><a href="/index" th:href="@{/}">Account Settings</a></li>
+					<!-- NEEDS TO BE CHANGED -->
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br>
+
+<table class="center" th:if="${scoreList != null and !scoreList.empty}">
+		<tr>
+			<th>Score</th>
+			<th>User</th>
+			<th>Date</th>
+			<th>Game</th>
+		</tr>
+		<tr th:each="s:${scoreList}">
+			<td th:text="${s.score}"></td>
+			<td>
+				<table th:if="${!s.user.empty}">
+					<tr th:each="user:${s.user}">
+						<td th:text="${user.name}"></td>
+					</tr>
+				</table>
+			</td>
+			<td th:text="${s.scoreDate}"></td>
+			<td>
+				<table th:if="${!s.game.empty}">
+					<tr th:each="game:${s.game}">
+						<td th:text="${game.name}"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+
+</body>
+</html>
