@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/mycss.css"
+	th:href="@{/css/mycss.css}" />
+<style>
+</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<h1 class="navbar-brand">Homepage</h1>
+			</div>
+			<button class="navbar-toggle" data-toggle="collapse"
+				data-target=".navHeaderCollapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<div class="collapse navbar-collapse navHeaderCollapse">
+				<ul class="nav navbar-nav navbar-right text-center">
+					<li class="active"><a href="addUser" >Add Order</a></li>
+					<li><a href="/index" th:href="@{/}">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br>
+	
+	<form role="form" class="custom-centered" method="get" action="addUser">
+	<div class="form-group">
+		<input type="submit" class="btn btn-primary" style="padding: 15px 32px; font-size: 20px"
+			name="login-submit" value="Add Order" />
+	</div>
+	</form>
+	<br><br>
+	<table class="center" th:if="${gameList != null and !gameList.empty}">
+		<tr>
+			<th>Name</th>
+			<th>Score</th>
+			<th>User List</th>
+		</tr>
+		<tr th:each="s:${gameList}">
+			<td th:text="${s.name}"></td>
+			<td>
+				<table th:if="${!s.gamePlays.empty}">
+					<tr th:each="gameplay:${s.gamePlays}">
+						<td th:text="${gameplay.score}"></td>
+					</tr>
+				</table>
+			</td>
+			<td>
+				<table th:if="${!s.userList.empty}">
+					<tr th:each="user:${s.userList}">
+						<td th:text="${user.name}"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

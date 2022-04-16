@@ -27,9 +27,9 @@ public class UserController {
 	private GameRepository gameRepository;
 	
 	@GetMapping("/")
-	public String homePage(Model model) {
-		//model.addAttribute("gameList", gameRepository.findAll());
-		return "Homepage";
+	public String index(Model model) {
+		model.addAttribute("gameList", gameRepository.findAll());
+		return "index";
 	}
 	
 	@PostMapping("/addUserToAccount")

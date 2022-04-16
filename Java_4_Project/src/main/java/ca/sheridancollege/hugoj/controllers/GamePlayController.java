@@ -22,7 +22,7 @@ public class GamePlayController {
 		model.addAttribute("scoreList", gamePlayRepository.findAllByOrderByScore());
 		model.addAttribute("userList", userRepository.findAll());
 		model.addAttribute("gameList",gameRepository.findAll());
-		return "leaderBoard";
+		return "LeaderBoard";
 	}
 	
 	
