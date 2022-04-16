@@ -3,10 +3,10 @@ package ca.sheridancollege.hugoj.bootstrap;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import ca.sheridancollege.hugoj.domain.Account;
 import ca.sheridancollege.hugoj.domain.Game;
@@ -17,6 +17,7 @@ import ca.sheridancollege.hugoj.repositories.GamePlayRepository;
 import ca.sheridancollege.hugoj.repositories.GameRepository;
 import ca.sheridancollege.hugoj.repositories.UserRepository;
 
+@Component
 public class bootstrapData implements CommandLineRunner {
 
 	@Autowired

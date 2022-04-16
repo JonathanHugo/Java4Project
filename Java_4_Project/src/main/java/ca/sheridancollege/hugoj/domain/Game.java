@@ -33,8 +33,8 @@ public class Game {
 	@NonNull
 	private String name;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "games")
-	List<GamePlay> gamePlays;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "game")
+	private List<GamePlay> gamePlays;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<User> userList;

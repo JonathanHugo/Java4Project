@@ -40,8 +40,8 @@ public class User {
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate bday;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "users")
-	List<GamePlay> gamePlays;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	private List<GamePlay> gamePlays;
 
 	
 }
